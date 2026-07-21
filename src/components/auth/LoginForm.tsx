@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
 import { Mail, Lock, Eye, EyeOff, Loader2 } from "lucide-react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -38,7 +38,12 @@ export const LoginForm = () => {
       return;
     }
 
-    router.push("/cliente");
+    const session = await getSession();
+    if (session?.user?.role === "ADMIN") {
+      router.push("/admin");
+    } else {
+      router.push("/cliente");
+    }
   };
 
   return (
