@@ -48,7 +48,7 @@ export const Header = () => {
             href="/login"
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
-              "px-6",
+              "px-6 h-10",
             )}
           >
             Entrar

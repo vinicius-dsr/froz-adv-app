@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Scale, ArrowRight } from "lucide-react";
+import { Scale } from "lucide-react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,10 +9,10 @@ export const Hero = () => {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="flex flex-col gap-6">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+            {/*<div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
               <Scale className="size-4" />
               Advocacia de Excelência
-            </div>
+            </div>*/}
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-4xl xl:text-5xl">
               Advocacia estratégica para buscar{" "}
               <span className="text-primary">soluções jurídicas</span> claras e
@@ -27,17 +27,16 @@ export const Hero = () => {
                 href="/login"
                 className={cn(
                   buttonVariants({ variant: "default", size: "lg" }),
-                  "gap-2 px-8",
+                  "gap-2 px-8 h-12",
                 )}
               >
                 Agende sua Consulta
-                <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="#servicos"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "gap-2 px-8",
+                  "gap-2 px-8 h-12",
                 )}
               >
                 Nossos Serviços
