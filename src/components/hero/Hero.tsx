@@ -32,7 +32,7 @@ export const Hero = () => {
             <Link
               href="#servicos"
               className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
+                buttonVariants({ variant: "secondary", size: "lg" }),
                 "gap-2 px-8 h-12",
               )}
             >

@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300 backdrop-blur-xs",
         scrolled
           ? "border-b border-border/50 bg-background/80 backdrop-blur-md"
           : "bg-transparent",
@@ -48,7 +48,7 @@ export const Header = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium shadow-sm text-foreground/70 transition-colors hover:text-primary"
+                className="text-sm font-medium text-shadow-2xs text-foreground/70 transition-colors hover:text-primary"
               >
                 {link.name}
               </Link>
