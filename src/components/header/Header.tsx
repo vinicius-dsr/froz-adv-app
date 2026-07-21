@@ -32,19 +32,18 @@ export const Header = () => {
             height={150}
           />
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
+          <nav className="flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
           <Link
             href="/login"
             className={cn(
