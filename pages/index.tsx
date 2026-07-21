@@ -1,7 +1,21 @@
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Services } from "@/components/services";
+import { HowItWorks } from "@/components/how-it-works";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Froz Advogados</h1>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <HowItWorks />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
