@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
-import { Header } from "@/components/header";
+import { Mail, Lock, User, Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { buttonVariants } from "@/components/ui/button";
@@ -20,12 +19,18 @@ export default function CadastroPage() {
         description="Cadastre-se na Froz Advogados e tenha acesso a serviços jurídicos de forma prática e segura."
         url="/cadastro"
       />
-      <Header />
-      <div className="grid min-h-screen grid-cols-1 pt-16 lg:grid-cols-2">
+      <div className="grid min-h-screen grid-cols-1 lg:grid-cols-2">
         <div className="relative hidden bg-[url('/image.jpg')] bg-cover bg-center backdrop-blur-sm lg:block" />
 
         <div className="flex items-center justify-center px-6 py-12">
           <div className="w-full max-w-md">
+            <Link
+              href="/login"
+              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-foreground/60 transition-colors hover:text-primary"
+            >
+              <ArrowLeft className="size-4" />
+              Voltar
+            </Link>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2 text-center">
                 <h1 className="text-2xl font-bold text-foreground">
