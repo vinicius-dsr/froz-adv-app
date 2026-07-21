@@ -40,7 +40,7 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <Link href="/">
               <Image
-                src="/logo.png"
+                src="/logo-footer.png"
                 alt="Logo Fróz Advogados"
                 width={200}
                 height={150}

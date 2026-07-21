@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /cliente
+Disallow: /api
+
+Sitemap: https://frozadvogados.com.br/sitemap.xml

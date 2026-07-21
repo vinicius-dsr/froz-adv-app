@@ -8,12 +8,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SEO } from "@/components/seo";
 
 export default function CadastroPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <>
+      <SEO
+        title="Criar Conta | Froz Advogados"
+        description="Cadastre-se na Froz Advogados e tenha acesso a serviços jurídicos de forma prática e segura."
+        url="/cadastro"
+      />
       <Header />
       <div className="grid min-h-screen grid-cols-1 pt-16 lg:grid-cols-2">
         <div className="relative hidden bg-[url('/image.jpg')] bg-cover bg-center backdrop-blur-sm lg:block" />
