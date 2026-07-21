@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { Send } from "lucide-react";
+import Image from "next/image";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { buttonVariants } from "../ui/button";
@@ -28,39 +29,22 @@ export const Contact = () => {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Phone className="size-5" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Telefone</h4>
-                <p className="text-sm text-foreground/60">(11) 99999-9999</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Mail className="size-5" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Email</h4>
-                <p className="text-sm text-foreground/60">
-                  contato@frozadvogados.com.br
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <MapPin className="size-5" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Endereço</h4>
-                <p className="text-sm text-foreground/60">
-                  Av. Paulista, 1000 - Sala 1201
-                  <br />
-                  São Paulo - SP
-                </p>
-              </div>
+          <div className="relative hidden overflow-hidden rounded-2xl shadow-lg lg:block">
+            <Image
+              src="/image.jpg"
+              alt="Escritório Froz Advogados"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 0px, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-lg font-semibold text-white">
+                Froz Advogados
+              </p>
+              <p className="text-sm text-white/80">
+                Advocacia estratégica e moderna
+              </p>
             </div>
           </div>
 
