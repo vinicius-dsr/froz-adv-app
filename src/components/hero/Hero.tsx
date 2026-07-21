@@ -6,10 +6,8 @@ export const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-[600px] overflow-hidden bg-[url('/hero-image.jpeg')] bg-cover bg-center lg:min-h-[700px]"
+      className="relative min-h-[600px] overflow-hidden bg-[url('/hero-edited.png')] bg-cover bg-center lg:min-h-[700px]"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-
       <div className="relative z-10 mx-auto flex min-h-[600px] max-w-6xl items-center px-4 pt-20 lg:min-h-[700px]">
         <div className="flex max-w-xl flex-col gap-6">
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-5xl xl:text-6xl">
