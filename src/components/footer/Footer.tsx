@@ -45,6 +45,8 @@ const social = [
   },
 ];
 
+const isExternal = (href: string) => href.startsWith("http") || href.startsWith("mailto:");
+
 export const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-primary to-[#4a1a0a] py-12">
@@ -69,6 +71,8 @@ export const Footer = () => {
                 <Link
                   key={s.href}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
                 >
                   <s.icon />
@@ -115,6 +119,9 @@ export const Footer = () => {
               <Link
                 key={link.name}
                 href={link.href}
+                {...(isExternal(link.href)
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
               >
                 <link.icon />
