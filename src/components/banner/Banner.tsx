@@ -1,20 +1,20 @@
-import { Users, Lightbulb, Eye, Zap } from "lucide-react";
+import { FaHandshake, FaChessKnight, FaEye, FaRocket } from "react-icons/fa";
 
 const items = [
   {
-    icon: Users,
+    icon: FaHandshake,
     label: "Atendimento personalizado",
   },
   {
-    icon: Lightbulb,
+    icon: FaChessKnight,
     label: "Soluções Estratégicas",
   },
   {
-    icon: Eye,
+    icon: FaEye,
     label: "Transparência em cada etapa",
   },
   {
-    icon: Zap,
+    icon: FaRocket,
     label: "Agilidade e Compromisso",
   },
 ];
@@ -27,9 +27,9 @@ export const Banner = () => {
           {items.map((item) => (
             <div
               key={item.label}
-              className="flex min-w-[200px] shrink-0 items-center gap-4 text-center snap-center md:min-w-0"
+              className="flex min-w-[200px] shrink-0 flex-col items-center gap-4 text-center snap-center md:min-w-0"
             >
-              <item.icon className="size-8 text-white" strokeWidth={1.5} />
+              <item.icon className="size-8 text-white" />
               <span className="text-sm font-medium text-white">
                 {item.label}
               </span>
