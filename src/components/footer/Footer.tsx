@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BsInstagram, BsWhatsapp, BsLinkedin } from "react-icons/bs";
+import {
+  MdOutlineEmail,
+  MdOutlineLocationOn,
+  MdOutlinePhone,
+} from "react-icons/md";
 
 const footerLinks = {
   servicos: [
@@ -17,19 +22,27 @@ const footerLinks = {
     { name: "Contato", href: "#contato" },
   ],
   contato: [
-    { name: "(11) 99999-9999", href: "tel:+5511999999999" },
     {
+      icon: MdOutlinePhone,
+      name: "(91) 8477-3039",
+      href: "https://wa.me/5591984773039",
+    },
+    {
+      icon: MdOutlineEmail,
       name: "contato@frozadvogados.com.br",
       href: "mailto:contato@frozadvogados.com.br",
     },
-    { name: "Av. Paulista, 1000 - Sala 1201", href: "#" },
+    { icon: MdOutlineLocationOn, name: "Todo territorio nacional", href: "#" },
   ],
 };
 
 const social = [
-  { icon: BsInstagram, href: "" },
-  { icon: BsWhatsapp, href: "" },
-  { icon: BsLinkedin, href: "" },
+  { icon: BsInstagram, href: "https://www.instagram.com/froz_advogados" },
+  { icon: BsWhatsapp, href: "https://wa.me/5591984773039" },
+  {
+    icon: BsLinkedin,
+    href: "https://www.linkedin.com/company/froz-advogados/",
+  },
 ];
 
 export const Footer = () => {
@@ -104,6 +117,7 @@ export const Footer = () => {
                 href={link.href}
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
+                <link.icon />
                 {link.name}
               </Link>
             ))}

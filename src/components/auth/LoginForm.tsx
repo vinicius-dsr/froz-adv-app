@@ -2,14 +2,44 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
+import { Mail, Lock, Eye, EyeOff, Loader2 } from "lucide-react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 
 export const LoginForm = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email") as string;
+    const password = form.get("password") as string;
+
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+
+    setLoading(false);
+
+    if (result?.error) {
+      setError("Email ou senha inválidos");
+      return;
+    }
+
+    router.push("/cliente");
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -20,13 +50,20 @@ export const LoginForm = () => {
         </p>
       </div>
 
-      <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        {error && (
+          <div className="rounded-md bg-destructive/10 px-4 py-3 text-sm text-destructive">
+            {error}
+          </div>
+        )}
+
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">Email</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-foreground/40" />
             <Input
               id="email"
+              name="email"
               type="email"
               placeholder="seu@email.com"
               className="pl-10"
@@ -49,6 +86,7 @@ export const LoginForm = () => {
             <Lock className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-foreground/40" />
             <Input
               id="password"
+              name="password"
               type={showPassword ? "text" : "password"}
               placeholder="••••••••"
               className="pl-10 pr-10"
@@ -70,12 +108,17 @@ export const LoginForm = () => {
 
         <button
           type="submit"
+          disabled={loading}
           className={cn(
             buttonVariants({ variant: "default", size: "lg" }),
             "mt-2 w-full",
           )}
         >
-          Entrar
+          {loading ? (
+            <Loader2 className="size-4 animate-spin" />
+          ) : (
+            "Entrar"
+          )}
         </button>
       </form>
 

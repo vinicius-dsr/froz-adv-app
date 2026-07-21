@@ -1,5 +1,18 @@
 import Head from "next/head";
+import { GetServerSideProps } from "next";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { User } from "lucide-react";
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerSession(ctx.req, ctx.res, authOptions);
+
+  if (!session) {
+    return { redirect: { destination: "/login", permanent: false } };
+  }
+
+  return { props: {} };
+};
 
 export default function ClienteDashboard() {
   return (
