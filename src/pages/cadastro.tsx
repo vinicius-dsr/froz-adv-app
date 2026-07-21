@@ -17,7 +17,7 @@ export default function CadastroPage() {
     <>
       <Header />
       <div className="grid min-h-screen grid-cols-1 pt-16 lg:grid-cols-2">
-        <div className="relative hidden bg-[url('/image.jpeg')] bg-cover bg-center backdrop-blur-sm lg:flex lg:items-center lg:justify-center">
+        <div className="relative hidden bg-[url('/image.jpg')] bg-cover bg-center backdrop-blur-sm lg:flex lg:items-center lg:justify-center">
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 flex flex-col items-center gap-6 px-12 text-center">
             <Image
