@@ -72,7 +72,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            {/*<div className="flex items-center gap-3 pt-2">
               {social.map((s) => (
                 <Link
                   key={s.href}
@@ -84,7 +84,7 @@ export const Contact = () => {
                   <s.icon className="size-4" />
                 </Link>
               ))}
-            </div>
+            </div>*/}
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
