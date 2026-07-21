@@ -13,15 +13,14 @@ export const Hero = () => {
               <Scale className="size-4" />
               Advocacia de Excelência
             </div>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-5xl xl:text-6xl">
-              Protegemos seus{" "}
-              <span className="text-primary">direitos</span> com
-              dedicação e experiência
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-4xl xl:text-5xl">
+              Advocacia estratégica para buscar{" "}
+              <span className="text-primary">soluções jurídicas</span> claras e
+              eficientes.
             </h1>
             <p className="max-w-lg text-lg text-foreground/60">
-              Com mais de 15 anos de experiência, a Froz Advogados oferece
-              assessoria jurídica completa para pessoas e empresas. Resolve suas
-              questões com segurança e transparência.
+              Atuação personalizada, transparente e focada em resultados para
+              pessoas e empresas.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
@@ -61,7 +60,9 @@ export const Hero = () => {
             </div>
             <div className="absolute -right-6 -top-6 rounded-xl border border-border bg-background p-4 shadow-lg">
               <div className="text-2xl font-bold text-primary">15+</div>
-              <div className="text-sm text-foreground/60">Anos de experiência</div>
+              <div className="text-sm text-foreground/60">
+                Anos de experiência
+              </div>
             </div>
           </div>
         </div>
