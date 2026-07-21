@@ -33,7 +33,7 @@ export const Hero = () => {
               href="#servicos"
               className={cn(
                 buttonVariants({ variant: "secondary", size: "lg" }),
-                "gap-2 px-8 h-12",
+                "gap-2 px-8 h-12 bg-",
               )}
             >
               Nossos Serviços

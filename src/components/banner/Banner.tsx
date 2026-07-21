@@ -1,6 +1,7 @@
-import { FaRegEye, FaRegHandshake } from "react-icons/fa";
+import { FaRegHandshake } from "react-icons/fa";
 import { IoRocketOutline } from "react-icons/io5";
 import { FaRegChessKnight } from "react-icons/fa6";
+import { BsTransparency } from "react-icons/bs";
 
 const items = [
   {
@@ -12,7 +13,7 @@ const items = [
     label: "Soluções Estratégicas",
   },
   {
-    icon: FaRegEye,
+    icon: BsTransparency,
     label: "Transparência em cada etapa",
   },
   {
@@ -29,9 +30,11 @@ export const Banner = () => {
           {items.map((item) => (
             <div
               key={item.label}
-              className="flex min-w-[200px] shrink-0  items-center gap-4 text-center snap-center md:min-w-0"
+              className="flex min-w-[200px] shrink-0 items-center gap-4 text-center snap-center md:min-w-0"
             >
-              <item.icon className="size-8 text-white" />
+              <div className="bg-amber-100/15 p-4 rounded-full backdrop-blur-xl">
+                <item.icon className="size-8 text-white" />
+              </div>
               <span className="text-sm font-medium text-white">
                 {item.label}
               </span>
