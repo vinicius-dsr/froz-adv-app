@@ -1,7 +1,21 @@
 import Link from "next/link";
+import { GetServerSideProps } from "next";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { ArrowLeft } from "lucide-react";
 import { LoginForm } from "@/components/auth";
 import { SEO } from "@/components/seo";
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerSession(ctx.req, ctx.res, authOptions);
+
+  if (session) {
+    const destination = session.user?.role === "ADMIN" ? "/admin" : "/cliente";
+    return { redirect: { destination, permanent: false } };
+  }
+
+  return { props: {} };
+};
 
 export default function LoginPage() {
   return (

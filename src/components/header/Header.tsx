@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
@@ -15,6 +16,7 @@ const navLinks = [
 ];
 
 export const Header = () => {
+  const { data: session } = useSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,6 +25,11 @@ export const Header = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const dashboardHref =
+    session?.user?.role === "ADMIN" ? "/admin" : "/cliente";
+  const dashboardLabel =
+    session?.user?.role === "ADMIN" ? "Painel Admin" : "Área do Cliente";
 
   return (
     <header
@@ -55,13 +62,13 @@ export const Header = () => {
             ))}
           </nav>
           <Link
-            href="/login"
+            href={session ? dashboardHref : "/login"}
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
               "px-6 h-10",
             )}
           >
-            Entrar
+            {session ? dashboardLabel : "Entrar"}
           </Link>
         </div>
 
@@ -89,13 +96,14 @@ export const Header = () => {
             ))}
           </nav>
           <Link
-            href="/login"
+            href={session ? dashboardHref : "/login"}
+            onClick={() => setMobileOpen(false)}
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
               "w-full px-6 text-center",
             )}
           >
-            Entrar
+            {session ? dashboardLabel : "Entrar"}
           </Link>
         </div>
       )}
