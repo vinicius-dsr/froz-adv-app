@@ -32,7 +32,7 @@ const footerLinks = {
       name: "contato@frozadvogados.com.br",
       href: "mailto:contato@frozadvogados.com.br",
     },
-    { icon: MdOutlineLocationOn, name: "Todo territorio nacional", href: "#" },
+    { icon: MdOutlineLocationOn, name: "Todo Territorio Nacional", href: "#" },
   ],
 };
 
@@ -115,7 +115,7 @@ export const Footer = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm text-white/70 transition-colors hover:text-white"
+                className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
               >
                 <link.icon />
                 {link.name}
