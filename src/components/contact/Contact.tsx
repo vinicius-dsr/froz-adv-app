@@ -65,11 +65,9 @@ export const Contact = () => {
                 <MapPin className="size-5" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Endereço</h4>
+                <h4 className="font-semibold text-foreground">Atendimento</h4>
                 <p className="text-sm text-foreground/60">
-                  Av. Paulista, 1000 - Sala 1201
-                  <br />
-                  São Paulo - SP
+                  Atendemos em todo o território nacional
                 </p>
               </div>
             </div>
