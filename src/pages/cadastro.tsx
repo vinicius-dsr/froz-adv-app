@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import { Header } from "@/components/header";
 import { Input } from "@/components/ui/input";
@@ -16,10 +17,15 @@ export default function CadastroPage() {
     <>
       <Header />
       <div className="grid min-h-screen grid-cols-1 pt-16 lg:grid-cols-2">
-        <div className="relative hidden bg-gradient-to-br from-primary/90 to-primary lg:flex lg:items-center lg:justify-center">
-          <div className="absolute inset-0 bg-[url('/placeholder-register.jpg')] bg-cover bg-center opacity-10" />
-          <div className="relative z-10 flex flex-col items-center gap-6 px-12 text-center text-white">
-            <h2 className="text-3xl font-bold">Froz Advogados</h2>
+        <div className="relative hidden bg-[url('/image.jpeg')] bg-cover bg-center backdrop-blur-sm lg:flex lg:items-center lg:justify-center">
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative z-10 flex flex-col items-center gap-6 px-12 text-center">
+            <Image
+              src="/logo.png"
+              alt="Logo Fróz Advogados"
+              width={200}
+              height={200}
+            />
             <p className="max-w-sm text-lg text-white/80">
               Crie sua conta e tenha acesso a todos os nossos serviços jurídicos
               de forma prática e segura.
