@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
@@ -16,14 +16,24 @@ const navLinks = [
 
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
+    <header
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "border-b border-border/50 bg-background/80 backdrop-blur-md"
+          : "bg-transparent",
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        {/*<Link href="/" className="text-xl font-bold text-primary">
-          Froz<span className="text-foreground">Adv</span>
-        </Link>*/}
-
         <Link href="/">
           <Image
             src="/logo.png"

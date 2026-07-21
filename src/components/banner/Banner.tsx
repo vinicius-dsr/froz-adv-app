@@ -1,20 +1,22 @@
-import { FaHandshake, FaChessKnight, FaEye, FaRocket } from "react-icons/fa";
+import { FaRegEye, FaRegHandshake } from "react-icons/fa";
+import { IoRocketOutline } from "react-icons/io5";
+import { FaRegChessKnight } from "react-icons/fa6";
 
 const items = [
   {
-    icon: FaHandshake,
+    icon: FaRegHandshake,
     label: "Atendimento personalizado",
   },
   {
-    icon: FaChessKnight,
+    icon: FaRegChessKnight,
     label: "Soluções Estratégicas",
   },
   {
-    icon: FaEye,
+    icon: FaRegEye,
     label: "Transparência em cada etapa",
   },
   {
-    icon: FaRocket,
+    icon: IoRocketOutline,
     label: "Agilidade e Compromisso",
   },
 ];
@@ -27,7 +29,7 @@ export const Banner = () => {
           {items.map((item) => (
             <div
               key={item.label}
-              className="flex min-w-[200px] shrink-0 flex-col items-center gap-4 text-center snap-center md:min-w-0"
+              className="flex min-w-[200px] shrink-0  items-center gap-4 text-center snap-center md:min-w-0"
             >
               <item.icon className="size-8 text-white" />
               <span className="text-sm font-medium text-white">
