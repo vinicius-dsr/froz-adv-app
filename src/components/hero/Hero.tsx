@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { dmSerifDisplay } from "@/styles/fonts";
 
 export const Hero = () => {
   return (
@@ -10,7 +11,7 @@ export const Hero = () => {
     >
       <div className="relative z-10 mx-auto flex min-h-[600px] max-w-6xl items-center px-4 pt-20 lg:min-h-[700px] md:mb-8">
         <div className="flex max-w-xl flex-col gap-6">
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-5xl xl:text-6xl">
+          <h1 className={`${dmSerifDisplay.className} text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-5xl xl:text-6xl`}>
             Advocacia estratégica para buscar{" "}
             <span className="text-primary">soluções jurídicas</span> claras e
             eficientes.
