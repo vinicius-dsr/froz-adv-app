@@ -42,8 +42,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Froz Advogados | Advocacia Estratégica em São Paulo"
-        description="Assessoria jurídica completa em São Paulo. Advogados especializados em direito civil, trabalhista e empresarial. Agende sua consulta."
+        title="Froz Advogados | Advocacia Estratégica"
+        description="Assessoria jurídica completa. Advogados especializados em direito civil, trabalhista e empresarial. Agende sua consulta."
         url="/"
         structuredData={structuredData}
       />
