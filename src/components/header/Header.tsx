@@ -73,7 +73,7 @@ export const Header = () => {
         </div>
 
         <button
-          className="inline-flex items-center justify-center md:hidden"
+          className="inline-flex items-center justify-center md:hidden bg-primary/20 p-4 rounded-full"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
