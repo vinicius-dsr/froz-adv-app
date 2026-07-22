@@ -137,14 +137,11 @@ export const Footer = () => {
             reservados.
           </div>
           <div className="flex gap-4">
-            <Link href="#" className="transition-colors hover:text-white">
+            <Link href="/politica-de-privacidade" className="transition-colors hover:text-white">
               Política de Privacidade
             </Link>
-            <Link href="#" className="transition-colors hover:text-white">
+            <Link href="/termos-de-uso" className="transition-colors hover:text-white">
               Termos de Uso
-            </Link>
-            <Link href="#" className="transition-colors hover:text-white">
-              LGPD
             </Link>
           </div>
         </div>
