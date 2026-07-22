@@ -35,7 +35,7 @@ export const Banner = () => {
               <div className="bg-amber-100/15 p-4 rounded-full backdrop-blur-xl">
                 <item.icon className="size-8 text-white" />
               </div>
-              <span className="text-sm font-medium text-white">
+              <span className="text-base font-medium text-white">
                 {item.label}
               </span>
             </div>
