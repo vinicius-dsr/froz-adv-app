@@ -47,6 +47,7 @@ export const Header = () => {
             alt="Logo Fróz Advogados"
             width={150}
             height={150}
+            className={cn("w-40 transition-all", scrolled ? "w-25" : "w-40")}
           />
         </Link>
         <div className="hidden items-center gap-6 md:flex">
